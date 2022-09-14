@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passaporte</title>
+    <style>
+        body {
+            font: normal 20px "Lucida Handwriting";
+            background-color: rgb(63, 153, 255);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Validação de Passaporte</h1>
+    Você é: <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Enter" onclick="procurar()">
+    <div id="res">Resultado</div>
+    <script>
+        function procurar() {
+            var pais = window.document.getElementById('txtpais')
+            var res = window.document.getElementById('res')
+            var nacionalidade = String(pais.value)
+            res.innerHTML = `<p>Você digitou <strong>${nacionalidade}</strong></p>`
+            if (nacionalidade != "Brasileiro") {
+                res.innerHTML += "<p>Estrangeiro!</p>"
+            } else{
+                res.innerHTML += "<p>Brasileiro!</p>"
+            }
+            
+        }  
+    </script>
+</body>
+</html>
